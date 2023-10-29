@@ -1,0 +1,45 @@
+// Función para elevar un número a una potencia
+function power(base, exponent) {
+  let result = 1;
+  for (let i = 0; i < exponent; i++) {
+    result *= base;
+  }
+  return result;
+}
+
+// Función para obtener el número mayor entre dos enteros
+function getLargerInt(number1, number2) {
+  if (number1 > number2) {
+    return number1;
+  } else {
+    return number2;
+  }
+}
+
+// Función para generar una secuencia de Fibonacci con un límite dado
+function fibonacciSequence(limit) {
+  if (limit <= 0) {
+    return [];
+  }
+  const sequence = [1, 1];
+  while (sequence.length < limit) {
+    const nextNumber = sequence[sequence.length - 1] + sequence[sequence.length - 2];
+    sequence.push(nextNumber);
+  }
+  return sequence;
+}
+
+// Función para calcular el promedio de un arreglo de números
+function calculateAverage(numbers) {
+  if (numbers.length === 0) {
+    return 0; // Manejar el caso de un arreglo vacío para evitar división por cero.
+  }
+  const sum = numbers.reduce((acc, current) => acc + current, 0);
+  return sum / numbers.length;
+}
+
+// Ejemplos
+console.log(power(2, 8)); // El resultado sera 256
+console.log(getLargerInt(45, 71)); // El resultado sera 71
+console.log(fibonacciSequence(20)); // Debe imprimir [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]
+console.log(calculateAverage([1, 2, 3, 4, 5, 6, 7, 8, 9])); // El resultado debe ser 5
